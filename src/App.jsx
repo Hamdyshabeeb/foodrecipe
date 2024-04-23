@@ -1,5 +1,19 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/header/Header';
+import Home from './pages/home/Home';
+import Favorites from './pages/favorites/Favorites';
+import Recipe from './pages/recipe/Recipe';
 
 export default function App() {
-	return <h1 className="text-3xl text-red-700">Food recipe App</h1>;
+	return (
+		<div>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/favorites" element={<Favorites />} />
+				<Route path="/recipe/:id" element={<Recipe />} />
+			</Routes>
+		</div>
+	);
 }
