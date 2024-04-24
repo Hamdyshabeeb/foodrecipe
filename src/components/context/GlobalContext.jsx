@@ -1,6 +1,19 @@
 import { useState, createContext } from 'react';
 
+/**
+ * Context for managing global application state.
+ * Provides search functionality and manages recipe data.
+ * @type {import('react').Context}
+ */
 export const globalContext = createContext(null);
+
+/**
+ * Global context provider component.
+ * Manages the global application state and provides it through context.
+ * @param {Object} props - The props object.
+ * @param {ReactNode} props.children - The child components wrapped by this context provider.
+ * @returns {JSX.Element} A React component representing the global context provider.
+ */
 
 export default function GlobalContext({ children }) {
 	const [search, setSearch] = useState('');

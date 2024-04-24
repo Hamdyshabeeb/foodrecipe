@@ -2,6 +2,12 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { globalContext } from '../context/GlobalContext';
 
+/**
+ * Header component for the recipe application.
+ * Provides navigation and search functionality.
+ * @returns {JSX.Element} A React component representing the header.
+ */
+
 export default function Header() {
 	const { search, setSearch, handelFormSubmit } = useContext(globalContext);
 
@@ -14,10 +20,9 @@ export default function Header() {
 				onSubmit={(e) => {
 					e.preventDefault();
 					console.log('submited');
-					handelFormSubmit(`https://forkify-api.herokuapp.com/api/search?q=${search}
-
-
-`);
+					handelFormSubmit(
+						`https://forkify-api.herokuapp.com/api/search?q=${search}`
+					);
 				}}
 			>
 				<input
