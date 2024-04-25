@@ -1,0 +1,16 @@
+.wrapper {
+
+    @apply container mt-5 lg:mt-10 mx-auto p-4 text-center text-gray-600
+}
+
+
+.btn {
+
+
+    @apply p-2 hover:text-gray-600
+}
+
+
+.btn.active {
+    @apply bg-orange-600
+}

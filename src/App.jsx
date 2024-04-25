@@ -7,7 +7,7 @@ import Recipe from './pages/recipe/Recipe';
 
 export default function App() {
 	return (
-		<div>
+		<div className=" bg-gray-50 min-h-screen">
 			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />

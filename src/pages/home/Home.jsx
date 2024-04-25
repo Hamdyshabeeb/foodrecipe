@@ -4,11 +4,27 @@ import RecipeCard from '../../components/recipeCard/RecipeCard';
 
 export default function Home() {
 	const { recipes: recipeData, status, error } = useContext(globalContext);
-	if (status === 'error') return <div>{error.message} </div>;
-	if (status === 'loading') return <div> Please Wait Fetching Data... </div>;
-	if (status === 'idle') return <div> Search for recipe name </div>;
+	if (status === 'error')
+		return (
+			<div className="wrapper">
+				<p className="text-3xl">{error.message}</p>{' '}
+			</div>
+		);
+	if (status === 'loading')
+		return (
+			<div className="wrapper">
+				<p className="text-3xl">Please Wait Fetching Data... </p>
+			</div>
+		);
+	if (status === 'idle')
+		return (
+			<div className="wrapper">
+				{' '}
+				<p className="text-3xl">Search for recipe name</p>{' '}
+			</div>
+		);
 	return (
-		<ul>
+		<ul className="wrapper">
 			{recipeData.recipes.map((recipe) => (
 				<RecipeCard key={recipe.recipe_id} recipeItem={recipe} />
 			))}
