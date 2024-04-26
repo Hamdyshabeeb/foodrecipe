@@ -47,6 +47,20 @@ export default function GlobalContext({ children }) {
 		fetchData(url);
 	}
 
+	function handelFavorites(current) {
+		const getIndex = favorites.findIndex(
+			(item) => item.recipe_id === current.recipe_id
+		);
+
+		if (getIndex === -1) {
+			setFavorites([...favorites, current]);
+		} else {
+			setFavorites(
+				favorites.filter((item) => item.recipe_id !== current.recipe_id)
+			);
+		}
+	}
+
 	return (
 		<globalContext.Provider
 			value={{
@@ -57,7 +71,7 @@ export default function GlobalContext({ children }) {
 				error,
 				recipes,
 				favorites,
-				setFavorites,
+				handelFavorites,
 				recipeDetails,
 				setRecipeDetails,
 			}}

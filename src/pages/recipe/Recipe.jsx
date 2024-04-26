@@ -4,7 +4,10 @@ import { globalContext } from '../../components/context/GlobalContext';
 
 export default function Recipe() {
 	const { id } = useParams();
-	const { recipeDetails, setRecipeDetails } = useContext(globalContext);
+	const { recipeDetails, setRecipeDetails, favorites, handelFavorites } =
+		useContext(globalContext);
+
+	const isFavorite = favorites.findIndex((recipe) => recipe.recipe_id === id);
 
 	useEffect(() => {
 		async function getRecipeDetails(url) {
@@ -16,11 +19,12 @@ export default function Recipe() {
 				console.log(error.message);
 			}
 		}
-
 		getRecipeDetails(`https://forkify-api.herokuapp.com/api/get?rId=${id}`);
-	}, []);
+	}, [id]);
 
-	console.log(recipeDetails);
+	console.log(favorites);
+
+	if (!recipeDetails) return <p> no data</p>;
 
 	return (
 		<div className="wrapper lg:grid lg:grid-cols-2 lg:shadow-sm lg:bg-white lg:p-0 ">
@@ -40,9 +44,11 @@ export default function Recipe() {
 					<p className="text-sm lg:text-base font-semibold text-gray-400 mt-1 lg:mt-2 ">
 						by <span> {recipeDetails.recipe.publisher}</span>
 					</p>
-					<button className="callBtn mt-5 lg:mt-7 lg:mb-10  ">
-						{' '}
-						Add To Favorites{' '}
+					<button
+						className="callBtn mt-5 lg:mt-7 lg:mb-10   "
+						onClick={() => handelFavorites(recipeDetails.recipe)}
+					>
+						{isFavorite > -1 ? 'Remove from favorites' : 'Add to favorites'}
 					</button>
 				</div>
 
