@@ -27,12 +27,8 @@ export default function RecipeCard({ recipeItem }) {
 				by <span className="text-gray-500 font-semibold ">{publisher} </span>{' '}
 			</p>
 
-			<Link
-				className=" bg-orange-600 lg:px-7  px-2 lg:py-3  py-2 mt-auto mb-6  text-sm font-bold inline-block rounded-full text-white"
-				to={`/recipe/:${id}`}
-			>
-				{' '}
-				More Details{' '}
+			<Link className="callBtn" to={`/recipe/${id}`}>
+				More Details
 			</Link>
 		</li>
 	);

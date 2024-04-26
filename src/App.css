@@ -15,6 +15,9 @@
     @apply bg-orange-600
 }
 
+.callBtn {
+    @apply bg-orange-600 lg:px-7 px-4 lg:py-3 py-3 tracking-wide mt-auto mb-6 text-sm font-bold inline-block rounded-full text-white
+}
 
 .card-container {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 justify-items-center

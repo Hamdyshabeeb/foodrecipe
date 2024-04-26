@@ -20,6 +20,8 @@ export default function GlobalContext({ children }) {
 	const [status, setStatus] = useState('idle');
 	const [error, setError] = useState(null);
 	const [recipes, setRecipes] = useState({});
+	const [favorites, setFavorites] = useState([]);
+	const [recipeDetails, setRecipeDetails] = useState(null);
 
 	function handelFormSubmit(url) {
 		async function fetchData(url) {
@@ -47,7 +49,18 @@ export default function GlobalContext({ children }) {
 
 	return (
 		<globalContext.Provider
-			value={{ search, setSearch, handelFormSubmit, status, error, recipes }}
+			value={{
+				search,
+				setSearch,
+				handelFormSubmit,
+				status,
+				error,
+				recipes,
+				favorites,
+				setFavorites,
+				recipeDetails,
+				setRecipeDetails,
+			}}
 		>
 			{children}
 		</globalContext.Provider>
