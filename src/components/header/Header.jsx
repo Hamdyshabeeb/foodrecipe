@@ -18,7 +18,7 @@ export default function Header() {
 					<Link to="/">Recipes</Link>
 				</h2>
 				<form
-					className="order-3 lg:order-2 flex text-sm justify-self-center"
+					className="order-3 grow shrink lg:order-2 flex text-sm justify-self-center justify-center"
 					onSubmit={(e) => {
 						e.preventDefault();
 						console.log('submited');
@@ -28,7 +28,7 @@ export default function Header() {
 					}}
 				>
 					<input
-						className="bg-gray-100 rounded-s-full px-3 shrink outline-0 focus-visible:outline-0 font-normal md:px-4"
+						className="bg-gray-100 rounded-s-full px-3  grow max-w-96      font-normal md:px-5  outline-none"
 						type="text"
 						placeholder="Search recipes"
 						aria-label="search recipes"
@@ -36,7 +36,7 @@ export default function Header() {
 						onChange={(e) => setSearch(e.target.value)}
 					/>
 					<button
-						className="bg-gray-100 py-2 px-3 rounded-e-full font-normal hover:text-gray-600"
+						className="bg-gray-100 outline-none py-2 lg:py-3 px-3 rounded-e-full font-normal hover:text-gray-600 focus-visible:text-gray-600"
 						type="submit"
 					>
 						Search

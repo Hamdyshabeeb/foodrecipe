@@ -24,7 +24,7 @@ export default function Home() {
 			</div>
 		);
 	return (
-		<ul className="wrapper">
+		<ul className="wrapper card-container">
 			{recipeData.recipes.map((recipe) => (
 				<RecipeCard key={recipe.recipe_id} recipeItem={recipe} />
 			))}
