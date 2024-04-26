@@ -3,7 +3,7 @@ import { globalContext } from '../../components/context/GlobalContext';
 import RecipeCard from '../../components/recipeCard/RecipeCard';
 
 export default function Favorites() {
-	const { favorites, setFavorites } = useContext(globalContext);
+	const { favorites } = useContext(globalContext);
 
 	if (favorites.length === 0)
 		return (

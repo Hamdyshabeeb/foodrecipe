@@ -22,8 +22,6 @@ export default function Recipe() {
 		getRecipeDetails(`https://forkify-api.herokuapp.com/api/get?rId=${id}`);
 	}, [id]);
 
-	console.log(favorites);
-
 	if (!recipeDetails) return <p> no data</p>;
 
 	return (
