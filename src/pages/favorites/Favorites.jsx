@@ -8,7 +8,7 @@ export default function Favorites() {
 	if (favorites.length === 0)
 		return (
 			<div className="wrapper">
-				<p>No Favorite Recipes</p>{' '}
+				<p className="text-3xl">No Favorite Recipes</p>{' '}
 			</div>
 		);
 	return (

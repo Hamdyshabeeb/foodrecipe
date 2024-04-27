@@ -1,4 +1,5 @@
 import { useState, createContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Context for managing global application state.
@@ -22,6 +23,7 @@ export default function GlobalContext({ children }) {
 	const [recipes, setRecipes] = useState({});
 	const [favorites, setFavorites] = useState([]);
 	const [recipeDetails, setRecipeDetails] = useState(null);
+	const navigate = useNavigate();
 
 	function handelFormSubmit(url) {
 		async function fetchData(url) {
@@ -43,8 +45,9 @@ export default function GlobalContext({ children }) {
 				setStatus('error');
 			}
 		}
-
+		setSearch('');
 		fetchData(url);
+		navigate('/');
 	}
 
 	function handelFavorites(current) {

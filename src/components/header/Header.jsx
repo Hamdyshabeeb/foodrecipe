@@ -36,7 +36,8 @@ export default function Header() {
 						onChange={(e) => setSearch(e.target.value)}
 					/>
 					<button
-						className="bg-gray-100 outline-none py-2 lg:py-3 px-3 rounded-e-full font-normal hover:text-gray-600 focus-visible:text-gray-600"
+						disabled={search.length < 3}
+						className="bg-gray-100 disabled:opacity-80 outline-none py-2 lg:py-3 px-3 disabled:text-gray-300 rounded-e-full font-normal hover:text-gray-600 focus-visible:text-gray-600"
 						type="submit"
 					>
 						Search
